@@ -1,1 +1,3 @@
 streamlit
+python-dotenv
+writer-sdkpip install streamlit python-dotenv writer-sdk
