@@ -3,19 +3,20 @@ import os
 from dotenv import load_dotenv
 import io
 import re
-from writer_sdk import WriterClient, Document, File
-from writer_sdk.models import GenerationRequest
+from writer import WriterClient, Document, File
+from writer.models import GenerationRequest
 
 load_dotenv()
 
 # Writer SDK setup
 api_key = st.secrets["WRITER_API_KEY"]  # Assumes you have this key in Streamlit secrets
-organization_id = st.secrets["WRITER_ORG_ID"] # Assumes you have this org ID in Streamlit secrets
+organization_id = st.secrets["WRITER_ORG_ID"]  # Assumes you have this org ID in Streamlit secrets
 
 client = WriterClient(
     api_key=api_key,
     organization_id=organization_id
 )
+
 # Function to extract info directly from PDF with Writer SDK
 def extract_info_writer(pdf_file):
     if pdf_file:
